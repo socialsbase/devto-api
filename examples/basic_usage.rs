@@ -2,7 +2,7 @@
 //!
 //! Run with: cargo run --example basic_usage
 //!
-//! Set the DEVTO_API_KEY environment variable to use authenticated endpoints.
+//! Set the VIBE_FOREM_API_KEY environment variable to use authenticated endpoints.
 
 use devto_api::{Client, ClientExt};
 use std::num::NonZeroU32;
@@ -10,13 +10,13 @@ use std::num::NonZeroU32;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create a client - use API key if available, otherwise public access
-    let client = match std::env::var("DEVTO_API_KEY") {
+    let client = match std::env::var("VIBE_FOREM_API_KEY") {
         Ok(api_key) => {
             println!("Using authenticated client");
             Client::devto(&api_key)?
         }
         Err(_) => {
-            println!("Using public client (set DEVTO_API_KEY for authenticated access)");
+            println!("Using public client (set VIBE_FOREM_API_KEY for authenticated access)");
             Client::devto_public()?
         }
     };

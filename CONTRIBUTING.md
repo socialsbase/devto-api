@@ -49,7 +49,7 @@ To update the API bindings:
 cargo run --example basic_usage
 
 # With authentication
-DEVTO_API_KEY=your-api-key cargo run --example basic_usage
+VIBE_FOREM_API_KEY=your-api-key cargo run --example basic_usage
 ```
 
 ## Making Changes
